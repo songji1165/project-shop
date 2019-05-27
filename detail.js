@@ -51,12 +51,14 @@ document.querySelector(".modalMoveTO").addEventListener("click", function(e) {
 });
 
 let cartList = [];
-
+let data=0
 document.querySelector(".saveCartBtn").addEventListener("click", saveLS);
 
 function saveLS() {
   event.preventDefault();
+  var data = data +1
   let savedProdutInfo = {
+    data: data,
     id:getParam(),
     title:document.querySelector(".product-title").innerText,
     number: document.querySelector("#number").value,
