@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "price": 299,
+    "img": "img/pic1.jpg",
+    "title": "Blossom Dress",
+    "text": "Do you like some random yellow stuff? Here's one for you."
+  },
+  {
+    "id": 2,
+    "price": 199,
+    "img": "img/pic2.jpg",
+    "title": "Springfield Shirt",
+    "text": "Stole it from my dad."
+  },
+  {
+    "id": 3,
+    "price": 399,
+    "img": "img/pic3.jpg",
+    "title": "Black Monastery",
+    "text": "The best beer comes from the monastery."
+  },
+  {
+    "id": 4,
+    "name": "Mocade",
+    "price": 350,
+    "img": "img/pic4.jpg",
+    "title": "Black Mocade",
+    "text": "Hey look up! It's a plane! No, It's a bird! No, it's the assassin performing leap of faith."
+  },
+  {
+    "id": 5,
+    "name": "zipper",
+    "price": 59,
+    "img": "img/pic5.jpg",
+    "title": "No zipper dress",
+    "text": "The price of this dress has been cut off since we lost the zipper on the back."
+  },
+  {
+    "id": 6,
+    "name": "ernest",
+    "price": 299,
+    "img": "img/pic6.jpg",
+    "title": "Dear Ernest",
+    "text": "We'll bring readers to the edge of ther seats and keep them there until we sell this dress."
+  }
+]

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="header.js"></script>
+    
+
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="detail.css" />
+    <title>Test shop</title>
+
+  </head>
+
+  <body>
+    <div id="wrap">
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed">
+          <a class="navbar-brand logo" href="index.html">Fake Shop</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link disabled"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true"
+                  >Disabled</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+
+      <div class="container mt-5 my-4">
+        <div class="product-detail row">
+          <div class="col-md-6 mb-3 text-center">
+            <img src="img/pic1.jpg" width="80%" class="product-img"/>
+          </div>
+
+          <div class="detail-area col-md-6 py-4">
+            <h4 class="product-title font-weight-bold mb-3">Blossom Dress</h4>
+            <p class="product-text">이 원피스는 영국에서부터 시작하여..</p>
+            <p class="product-price font-weight-bold price mb-4">$199</p>
+
+            <form>
+              <div class="form-group">
+                <div class="col">
+                    <label for="">Quantity</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="1"
+                    id="number"
+                  />
+                </div>
+                <div class="col">
+                    <label for="">Color</label>
+                  <select class="form-control" id="color">
+                    <option>White</option>
+                    <option>Red</option>
+                    <option>Green</option>
+                  </select>
+                </div>
+                <div class="col">
+                        <label for="">Size</label>
+                  <select class="form-control" id="size">
+                    <option>Large</option>
+                    <option>Medium</option>
+                    <option>Small</option>
+                  </select>
+                </div>
+              </div>
+              <div class="addCart col text-right">
+                  <button type="submit" class="saveCartBtn btn btn-primary my-4 ">
+                    장바구니 추가
+                  </button>
+              </div>
+            </form>
+            
+            
+        </div>
+                <div class="modalMoveTO">
+                        <div class="wt-background">
+                          <p class="modalTitle">
+Items have been successfully added to your shopping cart.
+                        </p>
+                          <div class="selectBtn text-center mt-4">
+                              <button type="submit" class="moveToCart btn btn-outline-primary mb-2">Move to Cart page</button>
+                              <button type="button" class="closeModal btn btn-outline-secondary mb-2">
+                                    Continue Shopping
+                              </button>
+                          </div>
+                       
+                        </div>
+                      </div>
+        </div>
+             
+      <div class="tabDetail mt-5">
+        <ul class="tabList">
+          <li><a class="tab-button active" data-id="0">Products</a></li>
+          <li><a class="tab-button" data-id="1">Information</a></li>
+          <li><a class="tab-button" data-id="2">Shipping</a></li>
+          <div style="clear:both;"></div>
+        </ul>
+
+        <div class="tab-content show">
+          <p>상품설명입니다. Product</p>
+        </div>
+        <div class="tab-content">
+          <p>상품정보입니다. Information</p>
+        </div>
+        <div class="tab-content">
+          <p>배송정보입니다. Shipping</p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="detail.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+body,
+#wrap {
+  margin: 0 0 50px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  height: 60px;
+}
+
+.fixed {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+}
+
+.logo {
+  font-size: 35px;
+  transition: all 0.5s;
+  font-weight: bold;
+}
+
+.navbar-small {
+  opacity: 0.9;
+  transition: 0.3s;
+}
+.navbar-small .logo {
+  transition: 0.3s;
+  font-size: 1.5rem;
+}

@@ -1,0 +1,57 @@
+.price {
+  font-size: 1.2em;
+}
+
+.modalMoveTO {
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #fff;
+  padding: 5%;
+  z-index: 5;
+  display: none;
+  border-radius: 8px;
+  box-shadow:1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+.modalMoveTO .btn{
+    width: 170px
+}
+
+.tabDetail {
+  margin-bottom: 500px;
+}
+.tabList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab-button {
+  display: block;
+  padding: 10px 20px 10px 20px;
+  float: left;
+  margin-right: -1px;
+  margin-bottom: -1px;
+  color: grey;
+  text-decoration: none;
+}
+
+.active {
+  border-top: 2px solid orange;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid white;
+  border-left: 1px solid #ccc;
+  color: black;
+  margin-top: -2px;
+}
+
+.tab-content {
+  display: none;
+  padding: 10px;
+}
+
+.show {
+  display: block;
+}

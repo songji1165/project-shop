@@ -1,0 +1,7 @@
+.products{
+    white-space: nowrap;
+}
+.table{
+    max-width: 70%;
+    min-width: 540px
+}
