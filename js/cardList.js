@@ -35,6 +35,9 @@ function getData() {
     Show more
   </button>`;
   });
+  req.addEventListener("error", function() {
+    alert("현재 상품을 불러올 수 없습니다. 연결 상태를 확인해 주세요");
+  });
   req.open("GET", "http://localhost:3000/products");
   req.send();
 }
