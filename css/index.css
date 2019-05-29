@@ -5,7 +5,7 @@
 }
 
 .main-background {
-  background-image: url(img/cover.jpg);
+  background-image: url(/img/cover.jpg);
   background-size: cover;
 }
 

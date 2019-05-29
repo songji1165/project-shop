@@ -3,7 +3,7 @@ var req = new XMLHttpRequest();
 window.onload = function() {
   req.addEventListener("load", function() {
     const stockData = JSON.parse(req.response);
-    let selectedProduct = stockData.filter(function(n) {
+    let selectedProduct = stockData["products"].filter(function(n) {
       return n.id == getParam();
     });
     console.log(selectedProduct);
@@ -51,16 +51,16 @@ document.querySelector(".modalMoveTO").addEventListener("click", function(e) {
 });
 
 let cartList = [];
-let data=0
+let data = 0;
 document.querySelector(".saveCartBtn").addEventListener("click", saveLS);
 
 function saveLS() {
   event.preventDefault();
-  var data = data +1
+  var data = data + 1;
   let savedProdutInfo = {
     data: data,
-    id:getParam(),
-    title:document.querySelector(".product-title").innerText,
+    id: getParam(),
+    title: document.querySelector(".product-title").innerText,
     number: document.querySelector("#number").value,
     color: document.querySelector("#color").value,
     size: document.querySelector("#size").value,

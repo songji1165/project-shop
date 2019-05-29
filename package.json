@@ -1,0 +1,24 @@
+{
+  "name": "project-shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/songji1165/project-shop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/songji1165/project-shop/issues"
+  },
+  "homepage": "https://github.com/songji1165/project-shop#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}

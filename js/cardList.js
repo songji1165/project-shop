@@ -5,7 +5,6 @@ var products;
 var count = 0;
 
 var paintCardList = function() {
-  console.log(products);
   for (let i = 0; i < products.length; i++) {
     card.innerHTML += `
 <div class="col-md-4 mb-4 " id="">
@@ -22,7 +21,6 @@ var paintCardList = function() {
     </div>
     </div>
 `;
-    console.log("id", products[i].id);
   }
 };
 
@@ -37,7 +35,7 @@ function getData() {
     Show more
   </button>`;
   });
-  req.open("GET", "stock.json");
+  req.open("GET", "http://localhost:3000/products");
   req.send();
 }
 
@@ -58,37 +56,12 @@ function moreProducts() {
   }
 }
 
-document.querySelector(".highFilter").addEventListener("click", function() {
-  stockData.sort(function(a, b) {
-    return b.price - a.price;
-  });
-
-  var title = card.querySelectorAll(".card-title"),
-    content = card.querySelectorAll(".card-text"),
-    price = card.querySelectorAll(".card-price"),
-    img = card.querySelectorAll(".card-img-top");
-  aID = card.querySelectorAll("a");
-
-  for (let j = 0; j < stockData.length; j++) {
-    title[j].innerText = stockData[j].title;
-    content[j].innerText = stockData[j].text;
-    price[j].innerText = "$" + stockData[j].price;
-    img[j].src = stockData[j].img;
-    aID[j].id = stockData[j].id;
-  }
-});
-
-document.querySelector(".lowFilter").addEventListener("click", function() {
-  stockData.sort(function(a, b) {
-    return a.price - b.price;
-  });
-
+var filterTemplate = function() {
   var title = card.querySelectorAll(".card-title"),
     content = card.querySelectorAll(".card-text"),
     price = card.querySelectorAll(".card-price"),
     img = card.querySelectorAll(".card-img-top"),
     aID = card.querySelectorAll("a");
-
   for (let j = 0; j < stockData.length; j++) {
     title[j].innerHTML = stockData[j].title;
     content[j].innerHTML = stockData[j].text;
@@ -96,4 +69,19 @@ document.querySelector(".lowFilter").addEventListener("click", function() {
     img[j].src = stockData[j].img;
     aID[j].dataset.id = stockData[j].id;
   }
+};
+
+document.querySelector(".highFilter").addEventListener("click", function() {
+  stockData.sort(function(a, b) {
+    return b.price - a.price;
+  });
+  filterTemplate();
+});
+
+document.querySelector(".lowFilter").addEventListener("click", function() {
+  stockData.sort(function(a, b) {
+    return a.price - b.price;
+  });
+
+  filterTemplate();
 });
