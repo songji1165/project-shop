@@ -54,18 +54,19 @@ function moreProducts() {
   }
 }
 
-var filterTemplate = function() {
+var filterTemplate = function(stockData) {
   var title = card.querySelectorAll(".card-title"),
-    content = card.querySelectorAll(".card-text"),
+    text = card.querySelectorAll(".card-text"),
     price = card.querySelectorAll(".card-price"),
     img = card.querySelectorAll(".card-img-top"),
-    aID = card.querySelectorAll("a");
-  for (let j = 0; j < stockData.length; j++) {
+    id = card.querySelectorAll("a");
+  var j;
+  for (j in stockData) {
     title[j].innerHTML = stockData[j].title;
-    content[j].innerHTML = stockData[j].text;
+    text[j].innerHTML = stockData[j].text;
     price[j].innerHTML = "$" + stockData[j].price;
     img[j].src = stockData[j].img;
-    aID[j].dataset.id = stockData[j].id;
+    id[j].dataset.id = stockData[j].id;
   }
 };
 
@@ -73,7 +74,7 @@ document.querySelector(".highFilter").addEventListener("click", function() {
   stockData.sort(function(a, b) {
     return b.price - a.price;
   });
-  filterTemplate();
+  filterTemplate(stockData);
 });
 
 document.querySelector(".lowFilter").addEventListener("click", function() {
@@ -81,5 +82,5 @@ document.querySelector(".lowFilter").addEventListener("click", function() {
     return a.price - b.price;
   });
 
-  filterTemplate();
+  filterTemplate(stockData);
 });
