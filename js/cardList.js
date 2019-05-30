@@ -1,10 +1,23 @@
-var req = new XMLHttpRequest();
 var card = document.querySelector("#cardList");
 var stockData;
 var products;
 var count = 0;
 
-var paintCardList = function() {
+window.onload = function() {
+  fetch("http://localhost:3000/products")
+    .then(res => res.json())
+    .then(data => {
+      stockData = data;
+      products = stockData.slice(0, 3);
+      paintCardList();
+      sessionStorage.setItem("stocksData", JSON.stringify(stockData));
+    })
+    .catch(err =>
+      alert("현재 상품을 불러올 수 없습니다. 연결 상태를 확인해 주세요")
+    );
+};
+
+function paintCardList() {
   for (let i = 0; i < products.length; i++) {
     card.innerHTML += `
 <div class="col-md-4 mb-4 " id="">
@@ -22,24 +35,6 @@ var paintCardList = function() {
     </div>
 `;
   }
-};
-
-window.onload = getData();
-
-function getData() {
-  req.addEventListener("load", function() {
-    stockData = JSON.parse(req.response);
-    products = stockData.slice(0, 3);
-    paintCardList();
-    const moreBtn = `<button class="btn btn-danger" id="moreProduct" onclick="moreProducts()">
-    Show more
-  </button>`;
-  });
-  req.addEventListener("error", function() {
-    alert("현재 상품을 불러올 수 없습니다. 연결 상태를 확인해 주세요");
-  });
-  req.open("GET", "http://localhost:3000/products");
-  req.send();
 }
 
 function goToDetail() {

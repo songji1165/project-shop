@@ -1,17 +1,18 @@
-var req = new XMLHttpRequest();
+var stockData;
+window.onload = getData();
 
-window.onload = function() {
-  req.addEventListener("load", function() {
-    const stockData = JSON.parse(req.response);
-    let selectedProduct = stockData["products"].filter(function(n) {
+function getData() {
+  if (sessionStorage.getItem("stocksData")) {
+    stockData = JSON.parse(sessionStorage.getItem("stocksData"));
+    let selectedProduct = stockData.filter(function(n) {
       return n.id == getParam();
     });
-    console.log(selectedProduct);
     paintDetail(selectedProduct);
-  });
-  req.open("GET", "stock.json");
-  req.send();
-};
+  } else {
+    alert("데이터를 불러올 수 없습니다.");
+    location.href = "index.html";
+  }
+}
 
 function getParam(sname) {
   const params = location.search.substr(location.search.indexOf("?"));
