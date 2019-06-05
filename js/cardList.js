@@ -4,13 +4,20 @@ var products;
 var count = 0;
 
 window.onload = function() {
-  fetch("http://localhost:3000/products")
-    .then(res => res.json())
+  fetch(
+    "http://ec2-18-191-138-183.us-east-2.compute.amazonaws.com:8888/products"
+  )
     .then(data => {
-      stockData = data;
-      products = stockData.slice(0, 3);
-      paintCardList();
-      sessionStorage.setItem("stocksData", JSON.stringify(stockData));
+      data.json().then(function(temp) {
+        stockData = temp.data.products;
+        products = stockData.slice(0, 3);
+        paintCardList();
+        sessionStorage.setItem("stocksData", JSON.stringify(stockData));
+      });
+      //  stockData = data;
+      //   products = stockData.slice(0, 3);
+      //   paintCardList();
+      //   sessionStorage.setItem("stocksData", JSON.stringify(stockData));
     })
     .catch(err =>
       alert("현재 상품을 불러올 수 없습니다. 연결 상태를 확인해 주세요")
